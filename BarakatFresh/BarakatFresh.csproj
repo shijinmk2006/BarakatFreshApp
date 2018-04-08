@@ -177,10 +177,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Projects\DataCartServiceApp\DataAccess\DataAccess.csproj">
       <Project>{cfbf9516-1397-4d3e-ab67-c1b63129f8f3}</Project>
@@ -190,6 +186,9 @@
       <Project>{c9fc4c39-2ccc-4b39-8dfd-ab653a8e4ada}</Project>
       <Name>DataEntity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

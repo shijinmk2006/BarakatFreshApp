@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataEntity", "D:\Projects\DataCartServiceApp\DataEntity\DataEntity.csproj", "{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarakatFresh", "BarakatFresh\BarakatFresh.csproj", "{C9DBB748-4809-4744-963E-3043011E6EF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "D:\Projects\DataCartServiceApp\DataAccess\DataAccess.csproj", "{CFBF9516-1397-4D3E-AB67-C1B63129F8F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarakatFresh", "BarakatFresh\BarakatFresh.csproj", "{C9DBB748-4809-4744-963E-3043011E6EF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataEntity", "D:\Projects\DataCartServiceApp\DataEntity\DataEntity.csproj", "{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CFBF9516-1397-4D3E-AB67-C1B63129F8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFBF9516-1397-4D3E-AB67-C1B63129F8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFBF9516-1397-4D3E-AB67-C1B63129F8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFBF9516-1397-4D3E-AB67-C1B63129F8F3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9DBB748-4809-4744-963E-3043011E6EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9DBB748-4809-4744-963E-3043011E6EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9DBB748-4809-4744-963E-3043011E6EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9DBB748-4809-4744-963E-3043011E6EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBF9516-1397-4D3E-AB67-C1B63129F8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBF9516-1397-4D3E-AB67-C1B63129F8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBF9516-1397-4D3E-AB67-C1B63129F8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBF9516-1397-4D3E-AB67-C1B63129F8F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9FC4C39-2CCC-4B39-8DFD-AB653A8E4ADA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

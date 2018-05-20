@@ -1,0 +1,68 @@
+﻿@model BarakatFresh.Model.ResetPassword
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Reset Password</title>
+</head>
+<body>
+    <div class="main-container container">
+        
+
+        <div class="row">
+            <div id="content" class="col-sm-12">
+                <div class="page-login">
+
+                    <div class="account-border">
+                        <div class="row">
+                            <div class="col-sm-6 new-customer">
+
+
+                            </div>
+
+                            <div>
+                                <div class="col-sm-6 customer-login">
+                                    @using (Html.BeginForm("ResetPassword", "Transaction"))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true)
+                                    <div class="well">
+                                        <h2><i class="fa fa-file-text-o" aria-hidden="true"></i> Reset Password</h2>
+
+                                        <div class="form-group">
+                                            <label class="control-label " for="input-email">Tocken :</label>
+                                            @Html.TextBoxFor(m => m.UserName, new { @type = "text", @class = "form-control", @readonly = "true" })
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label " for="input-password">New Password</label>
+                                            @Html.TextBoxFor(m => m.Password, new { @type = "password", @class = "form-control" })
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label " for="input-password">Confirm Password</label>
+                                            @Html.TextBoxFor(m => m.ConfirmPassword, new { @type = "password", @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="bottom-form">
+
+                                        <input type="submit" value="Reset" class="btn btn-default pull-right" />
+                                    </div>
+                            }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

@@ -1,15 +1,22 @@
-﻿using DataAccess;
+﻿using BarakatFresh.WebSecurity;
+using DataAccess;
 using DataEntity;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Security;
+using WebMatrix.WebData;
 
 namespace testcart.Controllers
 {
+
+
     public class UserController : ApiController
     {
         DALUser dalUser = null;
@@ -17,36 +24,47 @@ namespace testcart.Controllers
         {
             dalUser = new DALUser();
         }
-        
-        public async Task<HttpResponseMessage> GetUserDetails()
-        {
 
-            IList<UserDetails> listUser = new List<UserDetails>();
-            var Users = await Task.Run(() => dalUser.GetUser());
-            foreach (var user in Users)
-            {
-                UserDetails usrDtl = new UserDetails();
-                usrDtl.userName = user.userName;
-                listUser.Add(usrDtl);
-
-            }
-            return Request.CreateResponse(HttpStatusCode.OK, listUser);
-
-        }
-
-        [Route("ValidateUser")]
+        [InitializeSimpleMembership]
         [HttpGet]
-        public async Task<HttpResponseMessage> ValidateUser(string userName)
+        public async Task<HttpResponseMessage> LoginUser(string userName, string password)
         {
+            IList<UserDetails> user = null;
             if (!string.IsNullOrEmpty(userName))
             {
-                var isValid = await Task.Run(() => dalUser.ValidateUser(userName.Trim()));
-                return Request.CreateResponse(HttpStatusCode.OK, isValid);
+                bool isValid = Membership.ValidateUser(userName, password);
+                if (isValid)
+                {
+                    user = await Task.Run(() => dalUser.GetUser(userName));
+                    if (user != null)
+                    {
+                        return new HttpResponseMessage()
+                        {
+                            Content = new StringContent(JsonConvert.SerializeObject(new { data = user }), Encoding.UTF8, "application/json")
+                        };
+                    }
+                    else
+                        return new HttpResponseMessage()
+                        {
+                            Content = new StringContent(JsonConvert.SerializeObject(new { data = user,error="Invalid UserName and Password" }), Encoding.UTF8, "application/json")
+                        };
+                }
+                else
+                    return new HttpResponseMessage()
+                    {
+                        Content = new StringContent(JsonConvert.SerializeObject(new { data = user, error = "Invalid UserName and Password" }), Encoding.UTF8, "application/json")
+                    };
+
+
+
             }
-            else
-                return Request.CreateResponse(HttpStatusCode.OK, false);
+
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(new { data = "" }), Encoding.UTF8, "application/json")
+            };
 
         }
-        
+
     }
 }
